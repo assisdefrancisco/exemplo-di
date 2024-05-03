@@ -18,3 +18,10 @@ Percebe os vários problemas que estão ocorrendo e o que pode a vim ocorrer.
 
 ## Solução:
 
+Primeiro precisamos aproveita do polimorfismo com interface, criamos a interface Notificador que 
+possui um método notificar com parametros cliente e mensagem.
+E nas classes AtivacaoClienteService e EmissaoNotaFiscalService criamos um propriedade do tipo Notificador
+que é nossa interface e criamos um construtor que tenha como parametro o tipo Notificador
+Assim podemos receber as instâncias de NotificadorEmail oU NotificadorSMS. Nisso temos um baixo acoplamento e
+tiramos a resposabilidade das classe AtivacaoClienteService e EmissaoNotaFiscalService de notificar o cliente
+seja por email ou SMS.
